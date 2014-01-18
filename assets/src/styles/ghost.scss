@@ -8,6 +8,14 @@
   p {
     margin-bottom: 2em;
   }
+
+  ul {
+    margin-bottom: 2em;
+  }
+  
+  img {
+    max-width: 100%;
+  }
 }
 
 .post-featured-marker {
@@ -32,6 +40,14 @@
   border-top: 1px solid rgb(238, 238, 238);
   margin-top: 2em;
   padding: 1em 0;
+  
+  .post-share {
+    a {
+      &:hover {
+        
+      }
+    }
+  }
 
   .fa-social {
     font-size: 2em;
@@ -40,14 +56,38 @@
 
     &.fa-facebook {
       color: rgb(72, 99, 174);
+      
+      &:hover {
+        color: lighten(rgb(72, 99, 174), 10%);
+      }
     }
 
     &.fa-twitter {
       color: rgb(70, 192, 251);
+      
+      &:hover {
+        color: lighten(rgb(70, 192, 251), 10%);
+      }
     }
 
     &.fa-google-plus {
       color: rgb(221, 75, 57);
+      
+      &:hover {
+        color: lighten(rgb(221, 75, 57), 10%);
+      }
+    }
+    
+    &.fa-vk {
+      color: rgb(76, 117, 163);
+      
+      &:hover {
+        color: lighten(rgb(76, 117, 163), 10%);
+      }
+    }
+    
+    &:hover {
+      border-bottom: none;
     }
   }
 }
