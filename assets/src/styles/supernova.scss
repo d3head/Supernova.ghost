@@ -1,5 +1,6 @@
 
 @import "variables";
+@import "mixins";
 @import "ghost";
 @import "experiments";
 
@@ -10,7 +11,7 @@ body {
 
 a {
   color: $blue;
-  transition: color .3s;
+  transition: all .3s;
 
   &:hover {
     text-decoration: none;
@@ -29,10 +30,16 @@ h4, h5, h6 {
 }
 
 // Header
-.jumbotron {
-  background: $white;
+.blog-cover {
+  background-color: $white;
+  background-position: center;
+  background-size: cover;
   border-bottom: 1px solid $lightgray;
   
+  .blog-cover-overlay {
+    display: none;
+  }
+
   &, h1 {
     font-family: $sans-serif;
     font-weight: 400;
@@ -49,10 +56,65 @@ h4, h5, h6 {
   }
 
   .blog-image {
+    display: block;
+
     img {
       max-height: 200px;
       border-radius: 50%;
-      border: 1px solid $lightgray;
+    }
+  }
+
+  &.covered {
+    color: $white;
+    position: relative;
+    padding-top: 3em;
+
+    @include responsive(sm) {
+      padding: 10em 0 5em 0;
+    }
+
+    &, h1 {
+      font-family: $serif;
+      text-shadow: 1px 1px 1px $black;
+    }
+
+    .blog-cover-overlay {
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      background-color: rgba(0, 0, 0, 0.3);
+
+      .blog-return-link {
+        text-shadow: none;
+        font-family: $sans-serif;
+        font-size: .7em;
+        color: $white;
+
+        position: absolute;
+        top: 1em;
+        left: 3em;
+
+        @include responsive(sm) {
+          left: 1em;
+        }
+
+        &:hover {
+          color: darken($white, 10%);
+        }
+
+        img {
+          max-width: 50px;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .blog-cover-content {
+      text-align: left;
     }
   }
 }
