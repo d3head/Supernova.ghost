@@ -3,7 +3,7 @@
  */
 
 /*globals jQuery, document */
-var disqus_shortname = 'theaqua'; // required: replace example with your forum shortname
+var disqus_shortname = 'olegso'; // required: replace example with your forum shortname
 
 (function() {
   if(document.getElementById('disqus_thread') !== null) {
